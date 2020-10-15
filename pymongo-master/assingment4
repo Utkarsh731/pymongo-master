@@ -1,0 +1,3 @@
+ db.records.find({genre:{$size:2}}) #find all records havings exactly two genre
+ db.records.find({"meta.aired":2018}) #find all movies that aired in 2018
+  db.records.find({ratings:{$elemMatch:{$gt:8,$lt:10}}})

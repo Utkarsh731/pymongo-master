@@ -1,0 +1,4 @@
+
+  db.createuser({user:"US",pwd:"password",roles:["userAdminAnyDatabase"]})
+  db.createuser({user:"UK",pwd:"password1",roles:["dbAdminAnyDatabase"]})
+  db.createuser({user:"UK",pwd:"password1",roles:[{	"role":"readWrite","db":"customer"},{	"role":"readWrite","db":"sales"}]})

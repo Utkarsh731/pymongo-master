@@ -12,18 +12,17 @@ for i in dataFromMigrant:
     overwrite=None
     requirements=[]
     actionName=i.get("actionName")
-    if actionName not in ['getAllVehiclesDetail', 'sendEmailPolicyTruck', 'getMileageChart', 'getUtilizedWastedFuelChart', 'getTravelHistory', 'aggregatedVehicleTrend', 'downloadFuelData', 'downloadSampleFileForMaintenance', 'getRawData', 'deleteVehicleDetails_ev', 'updateConfig', 'insertConfig', 'updateTripFromTravelHistory', 'getGroups', 'getTripDetails', 'getAllDeviceDetails_ev', 'insertDriver', 'updateDriverDetails', 'insertVehcileDetails', 'test', 'getAllCounters_ev', 'insertDeviceDetails_ev', 'updateDeviceDetails_ev', 'updateDriverDetails_ev', 'insertDriver_ev', 'insertVehcileDetails_ev', 'updateVehicleDetails', 'updateVehicleDetails_ev', 'getDisconnectionTrend_ev', 'updateTripDetailsPerDay', 'getDisconnectionTrend', 'deleteConfig']:
-        description=i.get("description")
-        imageDescription=i.get("imageDescription")
-        kind=i.get("kind")
-        pathParameters=i.get("pathParameters")
-        memory=str(codeFromMigrant.get("memory"))
-        responseFormat={}
-        payload={"actionName":actionName,"category":"customWidgets","code":code,"description":description,"developmentMode":False,"imageDescription":imageDescription,"imageName":imageName,"kind":kind,"memory":memory,"overwrite":overwrite,"pathParameters":pathParameters,"requirements":requirements,"responseFormat":responseFormat,"saveAsDraft":False}
-        try:
-            postCall=requests.post("https://omlogistics.iot83.com/api/v2/actions?pushToGit=false",json=payload,headers=headerForMigration,verify=False)
-            count+=1
-            print(count)
-        except:
-            print("error")
+    description=i.get("description")
+    imageDescription=i.get("imageDescription")
+    kind=i.get("kind")
+    pathParameters=i.get("pathParameters")
+    memory=str(codeFromMigrant.get("memory"))
+    responseFormat={}
+    payload={"actionName":actionName,"category":"customWidgets","code":code,"description":description,"developmentMode":False,"imageDescription":imageDescription,"imageName":imageName,"kind":kind,"memory":memory,"overwrite":overwrite,"pathParameters":pathParameters,"requirements":requirements,"responseFormat":responseFormat,"saveAsDraft":False}
+    try:
+        postCall=requests.post("https://omlogistics.iot83.com/api/v2/actions?pushToGit=false",json=payload,headers=headerForMigration,verify=False)
+        count+=1
+        print(count)
+    except:
+        print("error")
 

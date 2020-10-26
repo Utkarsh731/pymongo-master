@@ -1,0 +1,17 @@
+db.getCollection('placesGeoData').insertMany([{
+    name:"main Office",
+    loc:{type:"Point",coordinates:[26.4877435,80.3278503]}
+},{
+    name:"second Office",
+    loc:{type:"Point",coordinates:[26.488646126691307, 80.32666481301368]}
+},
+{
+    name:"third Office",
+    loc:{type:"Point",coordinates:[26.486948959887332, 80.32957054764309]}
+}])
+
+ db.places.find({loc:{$near:{$geometry:{type:"Point",coordinates:myLocations}}}}).pretty()
+ 
+  db.places.find({loc:{$near:{$geometry:{type:"Point",coordinates:myLocations},$minDistance:10,$maxDistance:1000}}}).pretty()
+ 
+  db.places.find({loc:{$geoWithin:{$geometry:polygonObject}}}).pretty()

@@ -1,13 +1,13 @@
 import requests,json
-headerForMigrant = { 'X-Authorization' : 'Bearer ' + "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJVdGthcnNoLnNodWtsYUA4M2luY3MuY29tIiwianRpIjoiODczY2IxODUyNjBlNDRhOTllNjFlZGIzYWM1MzY0ZTYiLCJ0ZW5hbnQiOiJibWNzb2Z0d2FyZSIsIm5hbWUiOiJVdGthcnNoIFNodWtsYSIsImlzVmVyaWZpZWQiOnRydWUsImlzTGljZW5zZUV4cGlyZWQiOmZhbHNlLCJpbnRlcm5hbFVzZXIiOnRydWUsInJvbGUiOiJCQUNLRU5EX0RFVkVMT1BFUiIsImtleSI6ImU3Y2JmNGIwNzQ5YTQzNmZiYjNiMjMyNTQyZjA1MjllIiwiaXNzIjoiNTY5NDAxZjEtMGM0Ny0xMWViLWEzYzQtMDJmNTc4NzY0YmZhIiwiaWF0IjoxNjAzNjg4MzE0LCJleHAiOjE2MDM4NjgzMTR9.FJhDuf-4s5X4DaiwO7E-KzQGG0wkWR799JCJJFY4SJ7i5p2IK1KjJPYZLCRCCF5YaEcgxtVpgZRzNm6E6SsmJQ" ,"x-project-id":"dc3c1c4749334ce4b27401efffefee8b"}
-headerForMigration={'X-Authorization':'Bearer '+'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1dGthcnNoLnNodWtsYUA4M2luY3MuY29tIiwianRpIjoiMGE0YmJjNmNlNDQ3NDgyODhjYjU1ZjY1MTE5MDdmN2MiLCJ0ZW5hbnQiOiJvbWxvZ2lzdGljcyIsIm5hbWUiOiJVdGthcnNoIHNodWtsYSIsImlzVmVyaWZpZWQiOnRydWUsImlzTGljZW5zZUV4cGlyZWQiOmZhbHNlLCJpbnRlcm5hbFVzZXIiOnRydWUsInJvbGUiOiJBQ0NPVU5UX0FETUlOIiwia2V5IjoiMjBmMjJlZWM4YTE5NDlkN2I3NWJiNTRiZTZkYzY5MjciLCJpc3MiOiJkNGRjYmYwZC0xNzUzLTExZWItYTNjNC0wMmY1Nzg3NjRiZmEiLCJpYXQiOjE2MDM2OTM3NzEsImV4cCI6MTYwMzg3Mzc3MX0.wKQMcKcYK_iZ5AQtKedlMVWTlYw77jUOfdXnfnUNh6r8wjDDduiFTGZOSYefpBqa9cvnaDHP4MbN3we_teaEdA','x-project-id':'192a853378514a9aad9d0f067169ebc5'}
-responseFromMigrant=requests.get("https://bmcsoftware.iot83.com/api/v2/actions/category?category=customWidgets", headers=headerForMigrant, verify=False)
+headerForMigrant = { 'X-Authorization' : 'Bearer ' + "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1dGthcnNoLnNodWtsYUA4M2luY3MuY29tIiwianRpIjoiMGE0YmJjNmNlNDQ3NDgyODhjYjU1ZjY1MTE5MDdmN2MiLCJ0ZW5hbnQiOiJvbWxvZ2lzdGljcyIsIm5hbWUiOiJVdGthcnNoIHNodWtsYSIsImlzVmVyaWZpZWQiOnRydWUsImlzTGljZW5zZUV4cGlyZWQiOmZhbHNlLCJpbnRlcm5hbFVzZXIiOnRydWUsInJvbGUiOiJBQ0NPVU5UX0FETUlOIiwia2V5IjoiYWQyNTU3YmFiMWM2NDJiYzgxM2I2MTI1NTVmZmNhNTMiLCJpc3MiOiJkNGRjYmYwZC0xNzUzLTExZWItYTNjNC0wMmY1Nzg3NjRiZmEiLCJpYXQiOjE2MDM5NDg5ODksImV4cCI6MTYwNDEyODk4OX0.MZk9f8sKjMf2M41VhxfDPugo6Teb7vIK80tD_dBFUh8wzFSWt2RI8PXz2r_vMetz_60ThXXNmWzeOcgGTuPn-Q" ,"x-project-id":"192a853378514a9aad9d0f067169ebc5"}
+headerForMigration={'X-Authorization':'Bearer '+'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1dGthcnNoLnNodWtsYUA4M2luY3MuY29tIiwianRpIjoiODlkMjY2MTdiNDRhNGFlNTgzMGQxOGQ4YmFjMmU5YzciLCJ0ZW5hbnQiOiJ0cmFja2luZyIsIm5hbWUiOiJVdGthcnNoIFNodWtsYSIsImlzVmVyaWZpZWQiOnRydWUsImlzTGljZW5zZUV4cGlyZWQiOmZhbHNlLCJpbnRlcm5hbFVzZXIiOnRydWUsInJvbGUiOiJCQUNLRU5EX1JPTEUiLCJrZXkiOiI3NWVhODNiNWViMWI0ZmU5OGU4YTVlNjFhNDQyMzk2NCIsImlzcyI6IjIxNGFhM2RlLTE5YzAtMTFlYi1hM2M0LTAyZjU3ODc2NGJmYSIsImlhdCI6MTYwMzk2NDM2NywiZXhwIjoxNjA0MTQ0MzY3fQ.a2veDUBdBYnnD-U4EjQHQKrpA8wE-yBWwEM3q1b7F-gE2Q_23yLu68Ejy-T0hBh7t6pIelA9ZYqMS4NA8OCPSQ','x-project-id':'537df655d1f34e22b318b97c9f4987b1'}
+responseFromMigrant=requests.get("https://omlogistics.iot83.com/api/v2/actions/category?category=customWidgets", headers=headerForMigrant, verify=False)
 dataFromMigrant=responseFromMigrant.json().get('data')
-count=32
+count=0
 for i in dataFromMigrant:
-    responseCodeFromMigrant=requests.get("https://bmcsoftware.iot83.com/api/v2/actions/"+i.get("id"), headers=headerForMigrant, verify=False)
+    responseCodeFromMigrant=requests.get("https://omlogistics.iot83.com/api/v2/actions/"+i.get("id"), headers=headerForMigrant, verify=False)
     codeFromMigrant=responseCodeFromMigrant.json().get("data")
-    code=codeFromMigrant["code"].replace("dc3fee8b","1929ebc5")
+    code=codeFromMigrant["code"].replace("1929ebc5","537987b1")
     imageName=codeFromMigrant.get("imageName")
     overwrite=None
     requirements=[]
@@ -20,9 +20,8 @@ for i in dataFromMigrant:
     responseFormat={}
     payload={"actionName":actionName,"category":"customWidgets","code":code,"description":description,"developmentMode":False,"imageDescription":imageDescription,"imageName":imageName,"kind":kind,"memory":memory,"overwrite":overwrite,"pathParameters":pathParameters,"requirements":requirements,"responseFormat":responseFormat,"saveAsDraft":False}
     try:
-        postCall=requests.post("https://omlogistics.iot83.com/api/v2/actions?pushToGit=false",json=payload,headers=headerForMigration,verify=False)
+        postCall=requests.post("https://tracking.iot83.com/api/v2/actions?pushToGit=true&commitMessage=testing",json=payload,headers=headerForMigration,verify=False)
         count+=1
         print(count)
     except:
         print("error")
-

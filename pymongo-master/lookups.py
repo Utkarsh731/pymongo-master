@@ -12,4 +12,5 @@ beforeTime=currentTime-3600000*duration
 data=list(con.aggregate([{"$lookup":{"from":"offlineDeviceHistory_cc8a4220","localField":"id","foreignField":"deviceId","as":"join"}},{"$unwind":"$join"},{"$match":{"join.status":"Offline","join.timestamp":{"$gte":beforeTime,"$lte":currentTime}}},{"$group":{"_id":"$vehicleNum","value":{"$sum":1}}},{"$project": {"_id":1,"value":1}}]))
 print(time.time()-start)
 print(data)
+
 #{"join":{"$elemMatch":{"timestamp":{"$gte":beforeTime,"$lte":currentTime},"status":"Offline"}}}}

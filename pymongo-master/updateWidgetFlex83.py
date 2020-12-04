@@ -41,4 +41,4 @@ for i in dataFromMigrant:
     except:
         print(postCall.json())
         print("error")
-    break
+

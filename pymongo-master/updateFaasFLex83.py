@@ -1,17 +1,17 @@
 import requests,time
 count=0
 
-headerForMigration = { 'X-Authorization' : 'Bearer ' + "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1dGthcnNoLnNodWtsYUA4M2luY3MuY29tIiwianRpIjoiMGFiNTYxY2ZmZjJmNDE1ZGIzYTY3MmY4MjRmNzNiOGEiLCJ0ZW5hbnQiOiJ0cmFjay1wZW5uYSIsIm5hbWUiOiJVdGthcnNoIFNodWtsYSIsImlzVmVyaWZpZWQiOnRydWUsImlzTGljZW5zZUV4cGlyZWQiOmZhbHNlLCJpbnRlcm5hbFVzZXIiOnRydWUsInJvbGUiOiJCQUNLRU5EX0RFViIsImtleSI6IjNiN2NkMjUyMWUxODQ4ZTZhNzdjY2IxM2M5YzE0MGZlIiwidGVuYW50VHlwZSI6IkZMRVgiLCJkZWZhdWx0QWNjb3VudEFkbWluIjpmYWxzZSwidXNlckdyb3VwcyI6W10sImlzcyI6Imh0dHBzOi8vaW90ODMuY29tIiwiaWF0IjoxNjA2ODE0MTcyLCJleHAiOjE2MDY5OTQxNzJ9.kZR45MSeEsPrMmn8oFbTmZv9IrMJucOTeNiUi8U_cK4j7tlC3OLmz_uQfouptrCptT12lMMFi4XMOK6RM__Glg" ,"x-project-id":"5dfa75dfcda34d94ac63fb5b1511f019"}
-headerForMigrant={'X-Authorization':'Bearer '+'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1dGthcnNoLnNodWtsYUA4M2luY3MuY29tIiwianRpIjoiODlkMjY2MTdiNDRhNGFlNTgzMGQxOGQ4YmFjMmU5YzciLCJ0ZW5hbnQiOiJ0cmFja2luZyIsIm5hbWUiOiJVdGthcnNoIFNodWtsYSIsImlzVmVyaWZpZWQiOnRydWUsImlzTGljZW5zZUV4cGlyZWQiOmZhbHNlLCJpbnRlcm5hbFVzZXIiOnRydWUsInJvbGUiOiJNVUxUSV9ST0xFIiwia2V5IjoiYjAzZjQ3M2U1ZjUwNDhhN2JmMTlmMDA0YWY1OTkwMjEiLCJpc3MiOiIyMTRhYTNkZS0xOWMwLTExZWItYTNjNC0wMmY1Nzg3NjRiZmEiLCJpYXQiOjE2MDY5NzUwMTUsImV4cCI6MTYwNzE1NTAxNX0.bzhMQQsyd3lg4kxBC8a6ljCbIwYXwj80dtVWjP9XaFP4RsvR5HoDbkfePHA7u4UIxVxSHyU83yJqeuvMwSS10Q','x-project-id':'537df655d1f34e22b318b97c9f4987b1'}
-responseFromMigrant=requests.get("https://tracking.iot83.com/api/v2/actions/category?category=customWidgets", headers=headerForMigrant, verify=False)
+headerForMigration = { 'X-Authorization' : 'Bearer ' + "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1dGthcnNoLnNodWtsYUA4M2luY3MuY29tIiwianRpIjoiMGFiNTYxY2ZmZjJmNDE1ZGIzYTY3MmY4MjRmNzNiOGEiLCJ0ZW5hbnQiOiJ0cmFjay1wZW5uYSIsIm5hbWUiOiJVdGthcnNoIFNodWtsYSIsImlzVmVyaWZpZWQiOnRydWUsImlzTGljZW5zZUV4cGlyZWQiOmZhbHNlLCJpbnRlcm5hbFVzZXIiOnRydWUsInJvbGUiOiJBQ0NPVU5UX0FETUlOIiwia2V5IjoiMjZiNmY3ZmJhNWMzNDYwOTg0OTJiYzkwYjZjZjRmMzIiLCJ0ZW5hbnRUeXBlIjoiRkxFWCIsImRlZmF1bHRBY2NvdW50QWRtaW4iOmZhbHNlLCJ1c2VyR3JvdXBzIjpbXSwiaXNzIjoiaHR0cHM6Ly9pb3Q4My5jb20iLCJpYXQiOjE2MDc0OTEzMzYsImV4cCI6MTYwNzY3MTMzNn0.jII-hqLkZnupXr2956cZeLMrSf6QZPVj1HxmsqYG3zD3j-4s0dYMGK_MxMo-z3co9ruiIJWXbO1K79rMJIfmBg" ,"x-project-id":"5dfa75dfcda34d94ac63fb5b1511f019"}
+headerForMigrant={'X-Authorization':'Bearer '+'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1dGthcnNoLnNodWtsYUA4M2luY3MuY29tIiwianRpIjoiMGFiNTYxY2ZmZjJmNDE1ZGIzYTY3MmY4MjRmNzNiOGEiLCJ0ZW5hbnQiOiJ0cmFjay1wZW5uYSIsIm5hbWUiOiJVdGthcnNoIFNodWtsYSIsImlzVmVyaWZpZWQiOnRydWUsImlzTGljZW5zZUV4cGlyZWQiOmZhbHNlLCJpbnRlcm5hbFVzZXIiOnRydWUsInJvbGUiOiJBQ0NPVU5UX0FETUlOIiwia2V5IjoiMjZiNmY3ZmJhNWMzNDYwOTg0OTJiYzkwYjZjZjRmMzIiLCJ0ZW5hbnRUeXBlIjoiRkxFWCIsImRlZmF1bHRBY2NvdW50QWRtaW4iOmZhbHNlLCJ1c2VyR3JvdXBzIjpbXSwiaXNzIjoiaHR0cHM6Ly9pb3Q4My5jb20iLCJpYXQiOjE2MDc0OTEzMzYsImV4cCI6MTYwNzY3MTMzNn0.jII-hqLkZnupXr2956cZeLMrSf6QZPVj1HxmsqYG3zD3j-4s0dYMGK_MxMo-z3co9ruiIJWXbO1K79rMJIfmBg','x-project-id':'5dfa75dfcda34d94ac63fb5b1511f019'}
+responseFromMigrant=requests.get("https://track-penna.flex83.com/api/v4/actions", headers=headerForMigrant, verify=False)
 codeFromMigrant=responseFromMigrant.json().get('data')
 count=0
 flexFaas=requests.get("https://track-penna.flex83.com/api/v4/actions",headers=headerForMigration,verify=False).json().get("data")
 for i in codeFromMigrant:
     #print(i)
-    responseCodeFromMigrant = requests.get("https://tracking.iot83.com/api/v2/actions/" + i.get("id"),headers=headerForMigrant, verify=False)
+    responseCodeFromMigrant = requests.get("https://track-penna.flex83.com/api/v4/actions/" + i.get("id"),headers=headerForMigrant, verify=False)
     codeFromMigrant = responseCodeFromMigrant.json().get("data")
-    code = codeFromMigrant.get("code").replace("537987b1","5df1f019")
+    code = codeFromMigrant.get("code").replace("pymongo.MongoClient(mongo_connect_url)","pymongo.MongoClient(mongo_connect_url,replicaSet='rs0')")
     imageName ="iot83/pymongo:v1_7d6eff69434d"
     overwrite = None
     requirements = []
@@ -51,3 +51,4 @@ for i in codeFromMigrant:
         print(actionName)
     except:
         print("error")
+    break

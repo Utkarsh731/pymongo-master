@@ -11,8 +11,10 @@ for i in codeFromMigrant:
     #print(i)
     responseCodeFromMigrant = requests.get("https://track-penna.flex83.com/api/v4/actions/" + i.get("id"),headers=headerForMigrant, verify=False)
     codeFromMigrant = responseCodeFromMigrant.json().get("data")
-    code = codeFromMigrant.get("code").replace("pymongo.MongoClient(mongo_connect_url)","pymongo.MongoClient(mongo_connect_url,replicaSet='rs0')")
-    imageName ="iot83/pymongo:v1_7d6eff69434d"
+    code = codeFromMigrant.get("code").replace("ETL_analytics_ODBBasicTracking_5df1f019","etl_analytics_odbbasictracking_5df1f019")
+    code = codeFromMigrant.get("code").replace("ETL_analytics_Obd2_LogIn_data_5df1f019",
+                                               "etl_analytics_obd2_login_data_5df1f019")
+    imageName =codeFromMigrant.get("imageName")
     overwrite = None
     requirements = []
     #codeMismatch=False
@@ -51,4 +53,4 @@ for i in codeFromMigrant:
         print(actionName)
     except:
         print("error")
-    break
+
